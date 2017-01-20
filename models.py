@@ -14,7 +14,26 @@ from openerp.fields import Date as newdate
 _logger = logging.getLogger(__name__)
 
 
-class asset_asset(models.Model):
+class AssetAsset(models.Model):
 	_inherit = 'asset.asset'
+
+
+	@api.model
+	def create(self, vals):
+		user = self.env['res.users'].browse(self.env.context['uid'])
+		vals['company_id'] = user.company_id.id
+	        return super(AssetAsset, self).create(vals)
+
+	company_id = fields.Many2one('res.company',string='Empresa')
+
+class MroRequest(models.Model):
+	_inherit = 'mro.request'
+
+
+	@api.model
+	def create(self, vals):
+		user = self.env['res.users'].browse(self.env.context['uid'])
+		vals['company_id'] = user.company_id.id
+	        return super(MroRequest, self).create(vals)
 
 	company_id = fields.Many2one('res.company',string='Empresa')
