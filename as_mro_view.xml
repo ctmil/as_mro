@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+        <data>
+
+	<record id="assets_tree_view_as_mro" model="ir.ui.view">
+	    <field name="name">asset.asset.tree.as.mro</field>
+            <field name="model">asset.asset</field>
+	    <field name="inherit_id" ref="asset.assets_tree_view" />
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+			<field name="company_id" />
+		</field>	
+            </field>
+        </record>
+
+        <!-- Asset Form View  -->
+        <record id="assets_form_view_as_mro" model="ir.ui.view">
+            <field name="name">asset.asset.form.as.mro</field>
+            <field name="model">asset.asset</field>
+	    <field name="inherit_id" ref="asset.assets_form_view" />
+            <field name="arch" type="xml">
+		<field name="property_stock_asset" position="after">
+			<field name="company_id" readonly="1"/>
+		</field>
+	    </field>
+	</record>
+
+	</data>
+</openerp>

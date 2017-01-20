@@ -23,7 +23,7 @@
     "depends": ["base","asset","mro"],
     "init_xml": [],
     "data": [
-	#'as_expedientes_view.xml'
+	'as_mro_view.xml'
     ],
     'demo_xml': [
     ],

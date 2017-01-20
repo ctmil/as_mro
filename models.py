@@ -13,14 +13,8 @@ from openerp.fields import Date as newdate
 #Get the logger
 _logger = logging.getLogger(__name__)
 
-"""
-class as_expediente(models.Model):
-	_name = 'as.expediente'
-	_description = 'AS Expediente'
-	_inherit = ['mail.thread']
 
-	name = fields.Char('Nombre',required=True,track_visibility=True)
-	date = fields.Date('Fecha',track_visibility=True)
-	date_deadline = fields.Date('Fecha Vencimiento',track_visibility=True)
-	contact_ids = fields.Many2many('res.partner', string='Contactos',track_visibility=True)
-"""
+class asset_asset(models.Model):
+	_inherit = 'asset.asset'
+
+	company_id = fields.Many2one('res.company',string='Empresa')
