@@ -23,7 +23,8 @@
     "depends": ["base","asset","mro"],
     "init_xml": [],
     "data": [
-	'as_mro_view.xml'
+	'as_mro_view.xml',
+	'security/mro_security.xml'
     ],
     'demo_xml': [
     ],
