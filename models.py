@@ -37,3 +37,4 @@ class MroRequest(models.Model):
 	        return super(MroRequest, self).create(vals)
 
 	company_id = fields.Many2one('res.company',string='Empresa')
+
